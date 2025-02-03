@@ -146,10 +146,10 @@ class _CustomMarkdownify(markdownify.MarkdownConverter):
             return alt
 
         # Remove dataURIs
-        if src.startswith("data:"):
-            src = src.split(",")[0] + "..."
+        #if src.startswith("data:"):
+        #    src = src.split(",")[0] + "..."
 
-        return "![%s](%s%s)" % (alt, src, title_part)
+        return "![Image](%s%s)" % (src, title_part)
 
     def convert_soup(self, soup: Any) -> str:
         return super().convert_soup(soup)  # type: ignore
